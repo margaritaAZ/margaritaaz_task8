@@ -4,3 +4,6 @@
 
 #import "AButton.h"
 #import "TimerDelegate.h"
+#import "DrawningsListDelegate.h"
+#import "CanvasView.h"
+#import "ArtistViewController.h"

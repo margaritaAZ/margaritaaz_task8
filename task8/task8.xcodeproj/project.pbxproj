@@ -55,6 +55,7 @@
 		F34E98CB26A5776300683003 /* CanvasViewDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CanvasViewDelegate.h; sourceTree = "<group>"; };
 		F3BA38A926A590B200EEC42D /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		F3BA38AB26A5990600EEC42D /* TimerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimerDelegate.h; sourceTree = "<group>"; };
+		F3BA38AD26A5C29500EEC42D /* DrawningsListDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DrawningsListDelegate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +148,7 @@
 				F34E98CA26A4B11600683003 /* PaletteDelegate.h */,
 				F34E98CB26A5776300683003 /* CanvasViewDelegate.h */,
 				F3BA38AB26A5990600EEC42D /* TimerDelegate.h */,
+				F3BA38AD26A5C29500EEC42D /* DrawningsListDelegate.h */,
 			);
 			path = Delegate;
 			sourceTree = "<group>";

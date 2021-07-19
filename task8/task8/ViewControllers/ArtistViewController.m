@@ -13,9 +13,10 @@
 #import "CanvasViewDelegate.h"
 #import "task8-Swift.h"
 #import "TimerDelegate.h"
+#import "DrawningsListDelegate.h"
 
 
-@interface ArtistViewController () <PaletteDelegate, CanvasViewDelegate, TimerDelegate>
+@interface ArtistViewController () <PaletteDelegate, CanvasViewDelegate, TimerDelegate, DrawningsListDelegate>
 
 @property (weak, nonatomic) IBOutlet AButton *shareButton;
 @property (weak, nonatomic) IBOutlet AButton *openPaletteButton;
@@ -27,6 +28,7 @@
 @property (weak, nonatomic) IBOutlet AButton *resetButton;
 @property (weak, nonatomic) IBOutlet AButton *openTimerButton;
 @property (assign, nonatomic) float timer;
+@property (assign, nonatomic) NSInteger template;
 
 @end
 
@@ -43,13 +45,11 @@
     [self.drawButton addTarget:self action:@selector(startDrawing) forControlEvents:UIControlEventTouchUpInside];
     [self.resetButton addTarget:self action:@selector(resetView) forControlEvents:UIControlEventTouchUpInside];
     [self.shareButton addTarget:self action:@selector(shareButtonTapped) forControlEvents:UIControlEventTouchUpInside];
-
-    
     self.canvasView.delegate = self;
 }
 
 - (void) startDrawing {
-    [self.canvasView startDrowings: self.lineColors timer: self.timer];
+    [self.canvasView startDrowings: self.lineColors timer: self.timer template: self.template];
     [self.openTimerButton setEnabled:NO];
     [self.drawButton setEnabled:NO];
     [self.openPaletteButton setEnabled:NO];
@@ -132,11 +132,15 @@
     UIImage *image = self.canvasView.saveAsImage;
     NSArray *items = @[image];
     UIActivityViewController *activityViewControntroller = [[UIActivityViewController alloc] initWithActivityItems:items applicationActivities:nil];
-//    activityViewControntroller.excludedActivityTypes = @[];
-
     [self presentViewController:activityViewControntroller animated:true completion:nil];
-    
-    
 }
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    DrawingsListVC *drawningsVC = segue.destinationViewController;
+    drawningsVC.delegate = self;
+}
+- (void) selectedDrawning: (NSInteger) template {
+    self.template = template;
+}
+
 
 @end

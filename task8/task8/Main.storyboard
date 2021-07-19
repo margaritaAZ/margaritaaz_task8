@@ -133,6 +133,9 @@
                                 <state key="normal" title="Planet">
                                     <color key="titleColor" name="Light Green Sea"/>
                                 </state>
+                                <connections>
+                                    <action selector="planetButtonTapped:" destination="UsE-jb-lx8" eventType="touchUpInside" id="mZt-lH-KBz"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BWd-Sg-EDq" customClass="AButton">
                                 <rect key="frame" x="88" y="149" width="200" height="40"/>
@@ -143,6 +146,9 @@
                                 <state key="normal" title="Head">
                                     <color key="titleColor" name="Light Green Sea"/>
                                 </state>
+                                <connections>
+                                    <action selector="headButtonTapped:" destination="UsE-jb-lx8" eventType="touchUpInside" id="vOg-M4-KPc"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XfJ-JW-SVt" customClass="AButton">
                                 <rect key="frame" x="88" y="204" width="200" height="40"/>
@@ -153,6 +159,9 @@
                                 <state key="normal" title="Tree">
                                     <color key="titleColor" name="Light Green Sea"/>
                                 </state>
+                                <connections>
+                                    <action selector="treeButtonTapped:" destination="UsE-jb-lx8" eventType="touchUpInside" id="hcl-b8-BpB"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CT9-4t-3dK" customClass="AButton">
                                 <rect key="frame" x="88" y="259" width="200" height="40"/>
@@ -163,6 +172,9 @@
                                 <state key="normal" title="Landscape">
                                     <color key="titleColor" name="Light Green Sea"/>
                                 </state>
+                                <connections>
+                                    <action selector="landscapeButtonTapped:" destination="UsE-jb-lx8" eventType="touchUpInside" id="R0X-z1-fde"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6B7-0c-mnH"/>
@@ -179,6 +191,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Drawings" id="5zT-M8-chi"/>
+                    <connections>
+                        <outlet property="headButton" destination="BWd-Sg-EDq" id="hIS-5J-alH"/>
+                        <outlet property="landscapeButton" destination="CT9-4t-3dK" id="QMm-rI-hAs"/>
+                        <outlet property="planetButton" destination="hSl-sy-WY1" id="aeT-TB-tOd"/>
+                        <outlet property="treeButton" destination="XfJ-JW-SVt" id="NpN-rU-T9o"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BS8-Sa-Pyj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

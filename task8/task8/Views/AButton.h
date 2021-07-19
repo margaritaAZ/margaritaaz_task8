@@ -10,7 +10,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface AButton : UIButton
-
+- (void)setSelected:(BOOL)selected;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -16,22 +16,28 @@
         self.layer.cornerRadius = 10;
         self.backgroundColor = UIColor.whiteColor;
         
-        self.layer.shadowColor = UIColor.blackColor.CGColor;
-        self.layer.shadowRadius = 1;
+        [self setDefaultState];
         self.layer.shadowOffset  = CGSizeMake(0.0f, 0.0f);
-        self.layer.shadowOpacity = 0.25;
         self.layer.masksToBounds = NO;
         self.layer.shadowPath = [UIBezierPath bezierPathWithRoundedRect:self.bounds cornerRadius:10].CGPath;
     }
     return self;
 }
 
--(void)setSelected:(BOOL)selected {
+- (void)setSelected:(BOOL)selected {
     if (selected) {
         self.layer.shadowColor = [UIColor colorNamed:@"Chill Sky"].CGColor;
+        self.layer.shadowRadius = 2;
+        self.layer.shadowOpacity = 1;
     } else {
-        self.layer.shadowColor = UIColor.blackColor.CGColor;
+        [self setDefaultState];
     }
+}
+
+- (void)setDefaultState {
+    self.layer.shadowColor = UIColor.blackColor.CGColor;
+    self.layer.shadowRadius = 1;
+    self.layer.shadowOpacity = 0.25;
 }
 
 - (void)setEnabled:(BOOL)enabled {
