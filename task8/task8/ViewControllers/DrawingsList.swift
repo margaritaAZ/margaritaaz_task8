@@ -14,14 +14,7 @@ class DrawingsListVC: UIViewController {
         super.viewDidLoad()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        setupNavigationItems()
-    }
-    
-    func setupNavigationItems() {
-        self.navigationItem.title = "Drawings"
-        self.navigationItem.backBarButtonItem?.setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "Montserrat-Regular", size: 17)!], for: UIControl.State.normal)
-        
-    }
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//    }
 }

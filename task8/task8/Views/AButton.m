@@ -22,10 +22,26 @@
         self.layer.shadowOpacity = 0.25;
         self.layer.masksToBounds = NO;
         self.layer.shadowPath = [UIBezierPath bezierPathWithRoundedRect:self.bounds cornerRadius:10].CGPath;
-        
     }
-    
     return self;
+}
+
+-(void)setSelected:(BOOL)selected {
+    if (selected) {
+        self.layer.shadowColor = [UIColor colorNamed:@"Chill Sky"].CGColor;
+    } else {
+        self.layer.shadowColor = UIColor.blackColor.CGColor;
+    }
+}
+
+- (void)setEnabled:(BOOL)enabled {
+    if (!enabled) {
+        self.alpha = 0.5f;
+        self.userInteractionEnabled = NO;
+    } else {
+        self.alpha = 1.0f;
+        self.userInteractionEnabled = YES;
+    }
 }
 
 /*
