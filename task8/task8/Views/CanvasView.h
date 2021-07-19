@@ -12,8 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CanvasView : UIView
 @property(weak, nonatomic) id<CanvasViewDelegate> delegate;
-- (void)startDrowings: (NSArray<UIColor *>*) colors;
+- (void)startDrowings: (NSArray<UIColor *>*) colors timer: (float) time;
 - (void) clearView;
+- (UIImage *) saveAsImage;
 @end
 
 NS_ASSUME_NONNULL_END

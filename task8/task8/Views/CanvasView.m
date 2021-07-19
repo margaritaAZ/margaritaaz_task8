@@ -38,7 +38,7 @@ typedef NS_ENUM(NSInteger, LineType) {
     return self;
 }
 
-- (void) addShapelayer: (LineType) line withColor: (UIColor *) color{
+- (void) addShapelayer: (LineType) line withColor: (UIColor *) color andTimer: (float) time{
     UIBezierPath *path = [UIBezierPath new];
     path = [self getPath:line];
     
@@ -50,22 +50,21 @@ typedef NS_ENUM(NSInteger, LineType) {
     [self.layer addSublayer:shapeLayer];
     
     CABasicAnimation *pathAnimation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
-    pathAnimation.duration = 1.0;
+    pathAnimation.duration = time;
     pathAnimation.fromValue = @(0.0f);
     pathAnimation.toValue = @(1.0f);
     [shapeLayer addAnimation:pathAnimation forKey:@"strokeEnd"];
 }
 
-- (void)startDrowings: (NSArray<UIColor *>*) colors 
-{
+- (void)startDrowings: (NSArray<UIColor *>*) colors timer: (float) time {
  NSMutableArray <UIColor *>* lineColors = [NSMutableArray arrayWithArray:colors];
     while (lineColors.count < 3) {
         [lineColors addObject: UIColor.blackColor];
     }
     self.pathLayers = [NSMutableSet new];
-    [self addShapelayer:line1 withColor:lineColors[0]];
-    [self addShapelayer:line2 withColor:lineColors[1]];
-    [self addShapelayer:line3 withColor:lineColors[2]];
+    [self addShapelayer:line1 withColor:lineColors[0] andTimer:time];
+    [self addShapelayer:line2 withColor:lineColors[1] andTimer:time];
+    [self addShapelayer:line3 withColor:lineColors[2] andTimer:time];
     
     [self.delegate drowingWasEnded];
 }
@@ -75,6 +74,14 @@ typedef NS_ENUM(NSInteger, LineType) {
         [path removeFromSuperlayer];
     }
     self.pathLayers = nil;
+}
+
+- (UIImage *) saveAsImage {
+    UIGraphicsImageRenderer *render = [[UIGraphicsImageRenderer alloc] initWithBounds:self.bounds];
+    return [render imageWithActions:^(UIGraphicsImageRendererContext * _Nonnull rendererContext) {
+        [self.layer renderInContext:rendererContext.CGContext];
+    }];
+
 }
 
 - (UIBezierPath *)getPath: (LineType) lineType

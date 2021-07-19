@@ -19,9 +19,10 @@
 		F34E989526A1D01C00683003 /* NavigationCotroller.m in Sources */ = {isa = PBXBuildFile; fileRef = F34E989426A1D01C00683003 /* NavigationCotroller.m */; };
 		F34E989726A1D1BD00683003 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F34E989626A1D1BD00683003 /* Color.xcassets */; };
 		F34E989A26A2D78900683003 /* AButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F34E989926A2D78900683003 /* AButton.m */; };
-		F34E989F26A2E60100683003 /* DrawingsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34E989E26A2E60100683003 /* DrawingsList.swift */; };
+		F34E989F26A2E60100683003 /* DrawingsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34E989E26A2E60100683003 /* DrawingsListViewController.swift */; };
 		F34E98A526A3239500683003 /* PaletteVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F34E98A426A3239500683003 /* PaletteVC.m */; };
 		F34E98A826A3556F00683003 /* ColorButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F34E98A726A3556F00683003 /* ColorButton.m */; };
+		F3BA38AA26A590B200EEC42D /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BA38A926A590B200EEC42D /* TimerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,13 +46,15 @@
 		F34E989826A2D78900683003 /* AButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AButton.h; sourceTree = "<group>"; };
 		F34E989926A2D78900683003 /* AButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AButton.m; sourceTree = "<group>"; };
 		F34E989D26A2E60100683003 /* task8-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "task8-Bridging-Header.h"; sourceTree = "<group>"; };
-		F34E989E26A2E60100683003 /* DrawingsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingsList.swift; sourceTree = "<group>"; };
+		F34E989E26A2E60100683003 /* DrawingsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingsListViewController.swift; sourceTree = "<group>"; };
 		F34E98A326A3239500683003 /* PaletteVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PaletteVC.h; sourceTree = "<group>"; };
 		F34E98A426A3239500683003 /* PaletteVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PaletteVC.m; sourceTree = "<group>"; };
 		F34E98A626A3556F00683003 /* ColorButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ColorButton.h; sourceTree = "<group>"; };
 		F34E98A726A3556F00683003 /* ColorButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ColorButton.m; sourceTree = "<group>"; };
 		F34E98CA26A4B11600683003 /* PaletteDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PaletteDelegate.h; sourceTree = "<group>"; };
 		F34E98CB26A5776300683003 /* CanvasViewDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CanvasViewDelegate.h; sourceTree = "<group>"; };
+		F3BA38A926A590B200EEC42D /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
+		F3BA38AB26A5990600EEC42D /* TimerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimerDelegate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,10 +132,11 @@
 				F34E988326A1852800683003 /* ArtistViewController.m */,
 				F34E989326A1D01C00683003 /* NavigationCotroller.h */,
 				F34E989426A1D01C00683003 /* NavigationCotroller.m */,
-				F34E989E26A2E60100683003 /* DrawingsList.swift */,
-				F34E989D26A2E60100683003 /* task8-Bridging-Header.h */,
 				F34E98A326A3239500683003 /* PaletteVC.h */,
 				F34E98A426A3239500683003 /* PaletteVC.m */,
+				F34E989E26A2E60100683003 /* DrawingsListViewController.swift */,
+				F34E989D26A2E60100683003 /* task8-Bridging-Header.h */,
+				F3BA38A926A590B200EEC42D /* TimerViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -142,6 +146,7 @@
 			children = (
 				F34E98CA26A4B11600683003 /* PaletteDelegate.h */,
 				F34E98CB26A5776300683003 /* CanvasViewDelegate.h */,
+				F3BA38AB26A5990600EEC42D /* TimerDelegate.h */,
 			);
 			path = Delegate;
 			sourceTree = "<group>";
@@ -219,10 +224,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3BA38AA26A590B200EEC42D /* TimerViewController.swift in Sources */,
 				F34E986B26A176B000683003 /* AppDelegate.m in Sources */,
 				F34E98A826A3556F00683003 /* ColorButton.m in Sources */,
 				F34E989A26A2D78900683003 /* AButton.m in Sources */,
-				F34E989F26A2E60100683003 /* DrawingsList.swift in Sources */,
+				F34E989F26A2E60100683003 /* DrawingsListViewController.swift in Sources */,
 				F34E988426A1852800683003 /* ArtistViewController.m in Sources */,
 				F34E989526A1D01C00683003 /* NavigationCotroller.m in Sources */,
 				F34E989026A1C48500683003 /* CanvasView.m in Sources */,
