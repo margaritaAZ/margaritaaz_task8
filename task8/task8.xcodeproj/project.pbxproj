@@ -24,6 +24,7 @@
 		F34E98A826A3556F00683003 /* ColorButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F34E98A726A3556F00683003 /* ColorButton.m */; };
 		F3BA38AA26A590B200EEC42D /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BA38A926A590B200EEC42D /* TimerViewController.swift */; };
 		F3BA38B426A6D14B00EEC42D /* Drawing.m in Sources */ = {isa = PBXBuildFile; fileRef = F3BA38B326A6D14B00EEC42D /* Drawing.m */; };
+		F3BA38B726A7059B00EEC42D /* ActionButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F3BA38B626A7059B00EEC42D /* ActionButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +60,8 @@
 		F3BA38AD26A5C29500EEC42D /* DrawningsListDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DrawningsListDelegate.h; sourceTree = "<group>"; };
 		F3BA38B226A6D14B00EEC42D /* Drawing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Drawing.h; sourceTree = "<group>"; };
 		F3BA38B326A6D14B00EEC42D /* Drawing.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Drawing.m; sourceTree = "<group>"; };
+		F3BA38B526A7059B00EEC42D /* ActionButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActionButton.h; sourceTree = "<group>"; };
+		F3BA38B626A7059B00EEC42D /* ActionButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActionButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +129,8 @@
 				F34E988F26A1C48500683003 /* CanvasView.m */,
 				F34E98A626A3556F00683003 /* ColorButton.h */,
 				F34E98A726A3556F00683003 /* ColorButton.m */,
+				F3BA38B526A7059B00EEC42D /* ActionButton.h */,
+				F3BA38B626A7059B00EEC42D /* ActionButton.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -250,6 +255,7 @@
 				F34E989026A1C48500683003 /* CanvasView.m in Sources */,
 				F34E98A526A3239500683003 /* PaletteVC.m in Sources */,
 				F34E987C26A176B200683003 /* main.m in Sources */,
+				F3BA38B726A7059B00EEC42D /* ActionButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

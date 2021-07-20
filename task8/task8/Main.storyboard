@@ -26,7 +26,7 @@
                                     <constraint firstAttribute="height" constant="300" id="NXv-a2-XGB"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v6n-xX-ubC" customClass="AButton">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v6n-xX-ubC" customClass="ActionButton">
                                 <rect key="frame" x="20" y="434" width="163" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="163" id="UpJ-1T-n7b"/>
@@ -36,7 +36,7 @@
                                     <color key="titleColor" name="Light Green Sea"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Olk-eC-Tss" customClass="AButton">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Olk-eC-Tss" customClass="ActionButton">
                                 <rect key="frame" x="20" y="486" width="151" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="151" id="ONJ-Vw-1xZ"/>
@@ -47,7 +47,7 @@
                                     <color key="titleColor" name="Light Green Sea"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xyn-3B-kwF" customClass="AButton">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xyn-3B-kwF" customClass="ActionButton">
                                 <rect key="frame" x="243" y="434" width="91" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="91" id="6Fm-uo-HrO"/>
@@ -57,7 +57,7 @@
                                     <color key="titleColor" name="Light Green Sea"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0MD-Ih-7Ra" customClass="AButton">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0MD-Ih-7Ra" customClass="ActionButton">
                                 <rect key="frame" x="239" y="486" width="95" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="95" id="6ed-Up-fU9"/>
@@ -67,7 +67,7 @@
                                     <color key="titleColor" name="Light Green Sea"/>
                                 </state>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ScP-BS-1QA" customClass="AButton">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ScP-BS-1QA" customClass="ActionButton">
                                 <rect key="frame" x="243" y="434" width="91" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="ogo-Do-njD"/>
@@ -210,7 +210,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q8e-BZ-kqJ" customClass="AButton">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q8e-BZ-kqJ" customClass="ActionButton">
                                 <rect key="frame" x="250" y="20" width="85" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="b0I-7c-nue"/>
@@ -325,7 +325,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dp3-PF-X7G" customClass="AButton">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dp3-PF-X7G" customClass="ActionButton">
                                 <rect key="frame" x="250" y="20" width="85" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="FhG-XI-jDm"/>
