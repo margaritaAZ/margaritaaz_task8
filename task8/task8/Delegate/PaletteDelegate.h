@@ -11,7 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @protocol PaletteDelegate <NSObject>
-- (void) saveColorsButtonTapped: (NSArray<ColorButton *>*) colors;
+- (void) saveColorsButtonTapped: (NSArray<UIColor *>*) colors;
 @end
 
 NS_ASSUME_NONNULL_END

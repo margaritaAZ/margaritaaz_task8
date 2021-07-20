@@ -14,7 +14,7 @@
 #import "task8-Swift.h"
 #import "TimerDelegate.h"
 #import "DrawningsListDelegate.h"
-#import "ColorButton.h"
+#import "Drawing.h"
 
 
 @interface ArtistViewController () <PaletteDelegate, CanvasViewDelegate, TimerDelegate, DrawningsListDelegate>
@@ -25,11 +25,10 @@
 @property (weak,nonatomic) TimerViewController *timerVC;
 @property (weak, nonatomic) IBOutlet AButton *drawButton;
 @property (weak, nonatomic) IBOutlet CanvasView *canvasView;
-@property (strong, nonatomic) NSArray<UIColor *>* pickedColors;
 @property (weak, nonatomic) IBOutlet AButton *resetButton;
 @property (weak, nonatomic) IBOutlet AButton *openTimerButton;
-@property (assign, nonatomic) float timer;
-@property (assign, nonatomic) NSInteger template;
+
+@property (strong, nonatomic) Drawing *drawing;
 
 @end
 
@@ -40,18 +39,19 @@
     self.view.backgroundColor = UIColor.whiteColor;
     [self.shareButton setEnabled:NO];
     
-    [self.paletteVC.view setHidden:YES];
     [self.openPaletteButton addTarget:self action:@selector(openPalette) forControlEvents:UIControlEventTouchUpInside];
     [self.openTimerButton addTarget:self action:@selector(openTimer) forControlEvents:UIControlEventTouchUpInside];
     [self.drawButton addTarget:self action:@selector(startDrawing) forControlEvents:UIControlEventTouchUpInside];
     [self.resetButton addTarget:self action:@selector(resetView) forControlEvents:UIControlEventTouchUpInside];
     [self.shareButton addTarget:self action:@selector(shareButtonTapped) forControlEvents:UIControlEventTouchUpInside];
     self.canvasView.delegate = self;
-    self.template = 1;
+    self.drawing = [Drawing new];
+    self.drawing.type = 1;
 }
 
+// MARK: Drawings
 - (void) startDrawing {
-    [self.canvasView startDrowings: self.pickedColors timer: self.timer template: self.template];
+    [self.canvasView startDrowings:self.drawing];
     [self.openTimerButton setEnabled:NO];
     [self.drawButton setEnabled:NO];
     [self.openPaletteButton setEnabled:NO];
@@ -73,50 +73,51 @@
     [self.shareButton setEnabled: NO];
     
     [self.canvasView clearView];
-//    self.timer = 1.0f;
-//    self.lineColors = nil;
-    
 }
 
+// MARK: Palette
 - (void) openPalette {
-   // [self.openPaletteButton setSelected:YES];
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: NSBundle.mainBundle];
     PaletteVC *palette = [storyboard instantiateViewControllerWithIdentifier:@"PaletteVC"];
     [self showChildViewController: palette];
     palette.delegate = self;
     self.paletteVC = palette;
+    
+    [palette setPickedButtons:self.drawing.colors];
 }
 
-- (void)saveColorsButtonTapped: (NSArray<ColorButton *>*) colors {
-    self.pickedColors = [[NSArray alloc] initWithArray:colors];
+- (void)saveColorsButtonTapped: (NSArray<UIColor *>*) colors {
+    self.drawing.colors = [[NSArray alloc] initWithArray:colors];
     [self hideChildViewController: self.paletteVC];
     self.paletteVC = nil;
 }
 
+// MARK: Timer
 - (void) openTimer {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: NSBundle.mainBundle];
     TimerViewController *timerVC = [storyboard instantiateViewControllerWithIdentifier:@"TimerVC"];
     [self showChildViewController: timerVC];
     timerVC.delegate = self;
-    
     self.timerVC = timerVC;
-    [timerVC setSliderValue:self.timer];
+    [timerVC setSliderValue:self.drawing.timer];
 }
 
 - (void) saveTimerButtonTapped: (float) timerValue {
-    self.timer = timerValue;
+    self.drawing.timer = timerValue;
     [self hideChildViewController: self.timerVC];
     self.timerVC = nil;
 }
 
+// MARK: Managing Child VC
 - (void) showChildViewController: (UIViewController *) viewController {
     [self addChildViewController:viewController];
     [self.view addSubview:viewController.view];
-    
+    // constraints
     viewController.view.translatesAutoresizingMaskIntoConstraints = NO;
     [viewController.view.heightAnchor constraintEqualToConstant:self.view.bounds.size.height/2].active = YES;
     [viewController.view.widthAnchor constraintEqualToConstant:self.view.bounds.size.width].active = YES;
     [viewController.view.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor constant:0].active = YES;
+    
     [viewController didMoveToParentViewController:self];
 }
 
@@ -129,19 +130,22 @@
     [viewController removeFromParentViewController];
 }
 
+//MARK: Share
 - (void) shareButtonTapped {
     UIImage *image = self.canvasView.saveAsImage;
     NSArray *items = @[image];
     UIActivityViewController *activityViewControntroller = [[UIActivityViewController alloc] initWithActivityItems:items applicationActivities:nil];
     [self presentViewController:activityViewControntroller animated:true completion:nil];
 }
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     DrawingsListVC *drawningsVC = segue.destinationViewController;
     drawningsVC.delegate = self;
-    [drawningsVC setSelectedTemplate: self.template];
+    [drawningsVC setSelectedTemplate: self.drawing.type];
 }
+
 - (void) selectedDrawning: (NSInteger) template {
-    self.template = template;
+    self.drawing.type = template;
 }
 
 

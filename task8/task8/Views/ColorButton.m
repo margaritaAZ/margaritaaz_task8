@@ -23,7 +23,6 @@
         self.layer.shadowOpacity = 0.25;
         self.layer.masksToBounds = NO;
         self.layer.shadowPath = [UIBezierPath bezierPathWithRoundedRect:self.bounds cornerRadius:10].CGPath;
-//        self.bState = disselected;
     }
     return self;
 }
@@ -40,42 +39,36 @@
 
 - (void)setSelected:(BOOL)selected {
     if (selected) {
-//        NSLog(@"%ld", (long)self.bState);
-//        if (self.bState == disselected) {
             self.subviews.firstObject.layer.frame = CGRectMake(2, 2, 36, 36);
             self.subviews.firstObject.layer.cornerRadius = 8;
-//            self.bState = 0;
         }
     else {
             self.subviews.firstObject.layer.frame = CGRectMake(8, 8, 24, 24);
             self.subviews.firstObject.layer.cornerRadius = 6;
-//            self.bState = disselected;
         }
-//    }
 }
 
-
-
-
-//- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-//    [super touchesBegan:touches withEvent:event];
-//}
-//
-//- (void) touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-//    [super touchesEnded:touches withEvent:event];
-//}
-//
-//- (void)touchesCancelled:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-//    [super touchesCancelled:touches withEvent:event];
-//}
-
-
-/*
- // Only override drawRect: if you perform custom drawing.
- // An empty implementation adversely affects performance during animation.
- - (void)drawRect:(CGRect)rect {
- // Drawing code
- }
- */
+- (void)setSelectedWithAnimation:(BOOL)selected {
+    if (selected) {
+        [UIView animateWithDuration:0.3 delay:0.0 options: UIViewAnimationOptionCurveLinear
+                       animations:^{
+                         self.subviews.firstObject.layer.frame = CGRectMake(2, 2, 36, 36);
+                         self.subviews.firstObject.layer.cornerRadius = 8;
+                       }
+                       completion:^(BOOL finished){
+                           NSLog(@"Done!");
+                       }];
+        }
+    else {
+        [UIView animateWithDuration:0.3 delay:0.0 options: UIViewAnimationOptionCurveLinear
+                       animations:^{
+                         self.subviews.firstObject.layer.frame = CGRectMake(8, 8, 24, 24);
+                         self.subviews.firstObject.layer.cornerRadius = 6;
+                       }
+                       completion:^(BOOL finished){
+                           NSLog(@"Done!");
+                       }];
+        }
+}
 
 @end

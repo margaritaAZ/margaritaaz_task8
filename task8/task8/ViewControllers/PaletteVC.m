@@ -24,6 +24,9 @@
 @property (weak, nonatomic) IBOutlet ColorButton *burgundyButton;
 
 @property (strong, nonatomic) NSMutableArray<ColorButton *> *pickedColors;
+@property (strong, nonatomic) NSArray<ColorButton *> *buttons;
+
+@property (weak, nonatomic) NSTimer *timer;
 
 
 @end
@@ -45,6 +48,72 @@
     self.view.layer.masksToBounds = NO;
     self.view.layer.shadowPath = [UIBezierPath bezierPathWithRoundedRect:self.view.bounds cornerRadius:40].CGPath;
     
+    [self configureColorButtons];
+    [self.saveButton addTarget:self action:@selector(saveButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+}
+
+- (void) colorSelected: (ColorButton *) button {
+    if ([self.pickedColors containsObject:button]) {
+        [self buttonAnimation:button wasSelected:NO];
+    } else {
+        if (self.pickedColors.count > 2) {
+            ColorButton *firstColor = self.pickedColors.firstObject;
+            [self button:firstColor wasSelected:NO];
+        }
+        self.view.backgroundColor = button.color;
+        [self.timer invalidate];
+        self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0
+                              target:self
+                              selector:@selector(setDefaultBackgroundColor)
+                              userInfo:nil repeats:NO];
+        [self buttonAnimation:button wasSelected:YES];
+        
+    }
+}
+
+- (void) setDefaultBackgroundColor {
+    self.view.backgroundColor = UIColor.whiteColor;
+}
+
+- (void) setPickedButtons: (NSArray<UIColor *>*) colors {
+    for (int i = 0; i < self.buttons.count; i++) {
+        for (int j = 0; j < colors.count; j++) {
+            if ([self.buttons[i].color isEqual:colors[j]]) {
+                [self button:self.buttons[i] wasSelected:YES];
+            }
+        }
+    }
+}
+
+- (void) button: (ColorButton *) button wasSelected: (BOOL) selected  {
+    if (selected) {
+        [button setSelected:YES];
+        [self.pickedColors addObject:button];
+    } else {
+        [button setSelected:NO];
+        [self.pickedColors removeObject:button];
+    }
+}
+
+- (void) buttonAnimation: (ColorButton *) button wasSelected: (BOOL) selected  {
+    if (selected) {
+        [button setSelectedWithAnimation:YES];
+        [self.pickedColors addObject:button];
+    } else {
+        [button setSelectedWithAnimation:NO];
+        [self.pickedColors removeObject:button];
+    }
+}
+
+- (void) saveButtonTapped: (id)sender {
+    NSMutableArray *colors = [NSMutableArray new];
+    for (int i = 0; i < self.pickedColors.count; i++) {
+        [colors addObject:self.pickedColors[i].color];
+    }
+    [self.delegate saveColorsButtonTapped:[colors copy]];
+}
+
+- (void) configureColorButtons {
     [self.redButton setButtonColor: [UIColor colorNamed:@"Red"]];
     [self.grayButton setButtonColor: [UIColor colorNamed:@"Gray"]];
     [self.darkBlueButton setButtonColor: [UIColor colorNamed:@"Dark Blue"]];
@@ -58,61 +127,25 @@
     [self.viridButton setButtonColor: [UIColor colorNamed:@"Virid"]];
     [self.burgundyButton setButtonColor: [UIColor colorNamed:@"Burgundy"]];
     
-    [self.redButton addTarget:self action:@selector(colorSelected:) forControlEvents:UIControlEventTouchUpInside];
-    [self.grayButton addTarget:self action:@selector(colorSelected:) forControlEvents:UIControlEventTouchUpInside];
-    [self.darkBlueButton addTarget:self action:@selector(colorSelected:) forControlEvents:UIControlEventTouchUpInside];
-    [self.greenButton addTarget:self action:@selector(colorSelected:) forControlEvents:UIControlEventTouchUpInside];
-    [self.purpleButton addTarget:self action:@selector(colorSelected:) forControlEvents:UIControlEventTouchUpInside];
-    [self.peachButton addTarget:self action:@selector(colorSelected:) forControlEvents:UIControlEventTouchUpInside];
-    [self.orangeButton addTarget:self action:@selector(colorSelected:) forControlEvents:UIControlEventTouchUpInside];
-    [self.blueButton addTarget:self action:@selector(colorSelected:) forControlEvents:UIControlEventTouchUpInside];
-    [self.pinkButton addTarget:self action:@selector(colorSelected:) forControlEvents:UIControlEventTouchUpInside];
-    [self.sapphirineButton addTarget:self action:@selector(colorSelected:) forControlEvents:UIControlEventTouchUpInside];
-    [self.viridButton addTarget:self action:@selector(colorSelected:) forControlEvents:UIControlEventTouchUpInside];
-    [self.burgundyButton addTarget:self action:@selector(colorSelected:) forControlEvents:UIControlEventTouchUpInside];
+    NSMutableArray<ColorButton *>* buttons = [NSMutableArray new];
+    [buttons addObject: self.redButton];
+    [buttons addObject:self.grayButton];
+    [buttons addObject: self.darkBlueButton];
+    [buttons addObject: self.greenButton];
+    [buttons addObject: self.purpleButton];
+    [buttons addObject: self.peachButton];
+    [buttons addObject: self.orangeButton];
+    [buttons addObject: self.blueButton];
+    [buttons addObject: self.pinkButton];
+    [buttons addObject: self.sapphirineButton];
+    [buttons addObject: self.viridButton];
+    [buttons addObject: self.burgundyButton];
     
-    [self.saveButton addTarget:self action:@selector(saveButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
-}
-
-- (void) colorSelected: (ColorButton *) button {
-    if ([self.pickedColors containsObject:button]) {
-        [button setSelected:NO];
-        [self.pickedColors removeObject:button];
-    } else {
-        if (self.pickedColors.count > 2) {
-            ColorButton *firstColor = self.pickedColors.firstObject;
-            [self.pickedColors removeObject:firstColor];
-            [firstColor setSelected:NO];
-        }
-        self.view.backgroundColor = button.color;
-        [button setSelected:YES];
-        [self.pickedColors addObject:button];
-    }
-}
-
-- (void) setSelectedButtons: (NSArray<ColorButton *>*) colors {
-    for (int i = 0; i < colors.count; i++) {
-        [colors[i] setSelected:YES];
-    }
-}
-
-- (void) saveButtonTapped: (id)sender {
-    NSMutableArray *colors = [NSMutableArray new];
-    for (int i = 0; i < self.pickedColors.count; i++) {
-        [colors addObject:self.pickedColors[i].color];
-    }
-    [self.delegate saveColorsButtonTapped:[colors copy]];
+    self.buttons = buttons;
     
+    for (int i = 0; i < buttons.count; i++) {
+        [buttons[i] addTarget:self action:@selector(colorSelected:) forControlEvents:UIControlEventTouchUpInside];
+    }
 }
-
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
 
 @end

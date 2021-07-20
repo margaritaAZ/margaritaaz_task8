@@ -7,12 +7,13 @@
 
 #import <UIKit/UIKit.h>
 #import "CanvasViewDelegate.h"
+#import "Drawing.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface CanvasView : UIView
 @property(weak, nonatomic) id<CanvasViewDelegate> delegate;
-- (void)startDrowings: (NSArray<UIColor *>*) colors timer: (float) time template: (NSInteger) template;
+- (void)startDrowings: (Drawing *) drawing;
 - (void) clearView;
 - (UIImage *) saveAsImage;
 @end

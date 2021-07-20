@@ -23,6 +23,7 @@
 		F34E98A526A3239500683003 /* PaletteVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F34E98A426A3239500683003 /* PaletteVC.m */; };
 		F34E98A826A3556F00683003 /* ColorButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F34E98A726A3556F00683003 /* ColorButton.m */; };
 		F3BA38AA26A590B200EEC42D /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BA38A926A590B200EEC42D /* TimerViewController.swift */; };
+		F3BA38B426A6D14B00EEC42D /* Drawing.m in Sources */ = {isa = PBXBuildFile; fileRef = F3BA38B326A6D14B00EEC42D /* Drawing.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,8 @@
 		F3BA38A926A590B200EEC42D /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		F3BA38AB26A5990600EEC42D /* TimerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimerDelegate.h; sourceTree = "<group>"; };
 		F3BA38AD26A5C29500EEC42D /* DrawningsListDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DrawningsListDelegate.h; sourceTree = "<group>"; };
+		F3BA38B226A6D14B00EEC42D /* Drawing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Drawing.h; sourceTree = "<group>"; };
+		F3BA38B326A6D14B00EEC42D /* Drawing.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Drawing.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				F34E989126A1C8E800683003 /* Main.storyboard */,
+				F3BA38AE26A6CE3400EEC42D /* Models */,
 				F34E98C926A4B0E800683003 /* Delegate */,
 				F34E989C26A2E58900683003 /* ViewControllers */,
 				F34E989B26A2E58000683003 /* Views */,
@@ -151,6 +155,15 @@
 				F3BA38AD26A5C29500EEC42D /* DrawningsListDelegate.h */,
 			);
 			path = Delegate;
+			sourceTree = "<group>";
+		};
+		F3BA38AE26A6CE3400EEC42D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F3BA38B226A6D14B00EEC42D /* Drawing.h */,
+				F3BA38B326A6D14B00EEC42D /* Drawing.m */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,6 +246,7 @@
 				F34E989F26A2E60100683003 /* DrawingsListViewController.swift in Sources */,
 				F34E988426A1852800683003 /* ArtistViewController.m in Sources */,
 				F34E989526A1D01C00683003 /* NavigationCotroller.m in Sources */,
+				F3BA38B426A6D14B00EEC42D /* Drawing.m in Sources */,
 				F34E989026A1C48500683003 /* CanvasView.m in Sources */,
 				F34E98A526A3239500683003 /* PaletteVC.m in Sources */,
 				F34E987C26A176B200683003 /* main.m in Sources */,

@@ -15,6 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property(weak, nonatomic) id<PaletteDelegate> delegate;
 
+- (void) setPickedButtons: (NSArray<UIColor *>*) colors;
+
 @end
 
 NS_ASSUME_NONNULL_END
