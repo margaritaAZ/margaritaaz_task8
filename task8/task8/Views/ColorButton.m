@@ -39,36 +39,30 @@
 
 - (void)setSelected:(BOOL)selected {
     if (selected) {
-            self.subviews.firstObject.layer.frame = CGRectMake(2, 2, 36, 36);
-            self.subviews.firstObject.layer.cornerRadius = 8;
-        }
-    else {
-            self.subviews.firstObject.layer.frame = CGRectMake(8, 8, 24, 24);
-            self.subviews.firstObject.layer.cornerRadius = 6;
-        }
+        self.subviews.firstObject.layer.frame = CGRectMake(2, 2, 36, 36);
+        self.subviews.firstObject.layer.cornerRadius = 8;
+    } else {
+        self.subviews.firstObject.layer.frame = CGRectMake(8, 8, 24, 24);
+        self.subviews.firstObject.layer.cornerRadius = 6;
+    }
 }
 
 - (void)setSelectedWithAnimation:(BOOL)selected {
     if (selected) {
         [UIView animateWithDuration:0.3 delay:0.0 options: UIViewAnimationOptionCurveLinear
-                       animations:^{
-                         self.subviews.firstObject.layer.frame = CGRectMake(2, 2, 36, 36);
-                         self.subviews.firstObject.layer.cornerRadius = 8;
-                       }
-                       completion:^(BOOL finished){
-                           NSLog(@"Done!");
-                       }];
+                         animations:^{
+            self.subviews.firstObject.layer.frame = CGRectMake(2, 2, 36, 36);
+            self.subviews.firstObject.layer.cornerRadius = 8;
         }
-    else {
+                         completion:^(BOOL finished){}];
+    } else {
         [UIView animateWithDuration:0.3 delay:0.0 options: UIViewAnimationOptionCurveLinear
-                       animations:^{
-                         self.subviews.firstObject.layer.frame = CGRectMake(8, 8, 24, 24);
-                         self.subviews.firstObject.layer.cornerRadius = 6;
-                       }
-                       completion:^(BOOL finished){
-                           NSLog(@"Done!");
-                       }];
+                         animations:^{
+            self.subviews.firstObject.layer.frame = CGRectMake(8, 8, 24, 24);
+            self.subviews.firstObject.layer.cornerRadius = 6;
         }
+                         completion:^(BOOL finished){}];
+    }
 }
 
 @end

@@ -9,6 +9,14 @@
 
 @implementation Drawing
 
+- (instancetype)init {
+    if (self = [super init]) {
+        self.timer = 1.0f;
+        self.type = DrawingTypeHead;
+    }
+    return self;
+}
+
 - (UIBezierPath *)getTemplate: (Line) line {
     switch (self.type) {
         case 0:

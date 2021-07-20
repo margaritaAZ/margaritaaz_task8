@@ -6,8 +6,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CanvasViewDelegate.h"
 #import "Drawing.h"
+#import "CanvasViewDelegate.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

@@ -10,6 +10,7 @@
 @interface CanvasView()
 
 @property (nonatomic, strong) NSMutableSet<CAShapeLayer *>* pathLayers;
+@property (nonatomic, strong) Drawing *drawing;
 
 @end
 
@@ -30,7 +31,7 @@
     return self;
 }
 
-- (void) addShapelayer: (UIBezierPath *) linePath withColor: (UIColor *) color andTimer: (float) time{
+- (void) addShapelayer: (UIBezierPath *) linePath withColor: (UIColor *) color {
     CAShapeLayer *shapeLayer = [CAShapeLayer layer];
     shapeLayer.path = linePath.CGPath;
     shapeLayer.fillColor = nil;
@@ -38,14 +39,21 @@
     [self.pathLayers addObject: shapeLayer];
     [self.layer addSublayer:shapeLayer];
     
-    CABasicAnimation *pathAnimation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
-    pathAnimation.duration = time;
-    pathAnimation.fromValue = @(0.0f);
-    pathAnimation.toValue = @(1.0f);
-    [shapeLayer addAnimation:pathAnimation forKey:@"strokeEnd"];
+    shapeLayer.strokeEnd = 0.0f;
+    float deltaT = 1.0f / 60.0f;
+    float step = 1.0f / (60.0f * self.drawing.timer);
+        
+    [NSTimer scheduledTimerWithTimeInterval:deltaT repeats:YES block:^(NSTimer * _Nonnull timer) {
+        shapeLayer.strokeEnd += step;
+        if (shapeLayer.strokeEnd > 1) {
+            [timer invalidate];
+            [self.delegate drowingWasEnded];
+        }
+    }];
 }
 
 - (void)startDrowings: (Drawing *) drawing {
+    self.drawing = drawing;
     NSMutableArray <UIColor *>* lineColors = [NSMutableArray arrayWithArray:drawing.colors];
     while (lineColors.count < 3) {
         [lineColors addObject: UIColor.blackColor];
@@ -56,11 +64,10 @@
         [lineColors exchangeObjectAtIndex:i withObjectAtIndex:n];
     }
     self.pathLayers = [NSMutableSet new];
-    [self addShapelayer:[drawing getTemplate:Line1] withColor:lineColors[0] andTimer:drawing.timer];
-    [self addShapelayer:[drawing getTemplate:Line2] withColor:lineColors[1] andTimer:drawing.timer];
-    [self addShapelayer:[drawing getTemplate:Line3] withColor:lineColors[2] andTimer:drawing.timer];
-
-    [self.delegate drowingWasEnded];
+    [self addShapelayer:[drawing getTemplate:Line1] withColor:lineColors[0]];
+    [self addShapelayer:[drawing getTemplate:Line2] withColor:lineColors[1]];
+    [self addShapelayer:[drawing getTemplate:Line3] withColor:lineColors[2]];
+    
 }
 
 - (void)clearView {

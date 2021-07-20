@@ -20,4 +20,15 @@
     }
 }
 
+- (void)setEnabled:(BOOL)enabled {
+    [super setEnabled:enabled];
+    if (!enabled) {
+        self.alpha = 0.5f;
+        self.userInteractionEnabled = NO;
+    } else {
+        self.alpha = 1.0f;
+        self.userInteractionEnabled = YES;
+    }
+}
+
 @end

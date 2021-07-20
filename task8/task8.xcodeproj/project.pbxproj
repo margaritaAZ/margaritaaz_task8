@@ -25,6 +25,7 @@
 		F3BA38AA26A590B200EEC42D /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BA38A926A590B200EEC42D /* TimerViewController.swift */; };
 		F3BA38B426A6D14B00EEC42D /* Drawing.m in Sources */ = {isa = PBXBuildFile; fileRef = F3BA38B326A6D14B00EEC42D /* Drawing.m */; };
 		F3BA38B726A7059B00EEC42D /* ActionButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F3BA38B626A7059B00EEC42D /* ActionButton.m */; };
+		F3BA38BA26A7447300EEC42D /* DrawingTypeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BA38B926A7447200EEC42D /* DrawingTypeButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,7 +55,6 @@
 		F34E98A626A3556F00683003 /* ColorButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ColorButton.h; sourceTree = "<group>"; };
 		F34E98A726A3556F00683003 /* ColorButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ColorButton.m; sourceTree = "<group>"; };
 		F34E98CA26A4B11600683003 /* PaletteDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PaletteDelegate.h; sourceTree = "<group>"; };
-		F34E98CB26A5776300683003 /* CanvasViewDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CanvasViewDelegate.h; sourceTree = "<group>"; };
 		F3BA38A926A590B200EEC42D /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		F3BA38AB26A5990600EEC42D /* TimerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimerDelegate.h; sourceTree = "<group>"; };
 		F3BA38AD26A5C29500EEC42D /* DrawningsListDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DrawningsListDelegate.h; sourceTree = "<group>"; };
@@ -62,6 +62,8 @@
 		F3BA38B326A6D14B00EEC42D /* Drawing.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Drawing.m; sourceTree = "<group>"; };
 		F3BA38B526A7059B00EEC42D /* ActionButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActionButton.h; sourceTree = "<group>"; };
 		F3BA38B626A7059B00EEC42D /* ActionButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActionButton.m; sourceTree = "<group>"; };
+		F3BA38B826A741F300EEC42D /* CanvasViewDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CanvasViewDelegate.h; sourceTree = "<group>"; };
+		F3BA38B926A7447200EEC42D /* DrawingTypeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingTypeButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +133,7 @@
 				F34E98A726A3556F00683003 /* ColorButton.m */,
 				F3BA38B526A7059B00EEC42D /* ActionButton.h */,
 				F3BA38B626A7059B00EEC42D /* ActionButton.m */,
+				F3BA38B926A7447200EEC42D /* DrawingTypeButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -155,9 +158,9 @@
 			isa = PBXGroup;
 			children = (
 				F34E98CA26A4B11600683003 /* PaletteDelegate.h */,
-				F34E98CB26A5776300683003 /* CanvasViewDelegate.h */,
 				F3BA38AB26A5990600EEC42D /* TimerDelegate.h */,
 				F3BA38AD26A5C29500EEC42D /* DrawningsListDelegate.h */,
+				F3BA38B826A741F300EEC42D /* CanvasViewDelegate.h */,
 			);
 			path = Delegate;
 			sourceTree = "<group>";
@@ -256,6 +259,7 @@
 				F34E98A526A3239500683003 /* PaletteVC.m in Sources */,
 				F34E987C26A176B200683003 /* main.m in Sources */,
 				F3BA38B726A7059B00EEC42D /* ActionButton.m in Sources */,
+				F3BA38BA26A7447300EEC42D /* DrawingTypeButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

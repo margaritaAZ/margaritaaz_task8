@@ -12,34 +12,49 @@ import UIKit
     enum Template: Int {
         case planet, head, tree, landscape
     }
-    @IBOutlet weak var planetButton: AButton!
-    @IBOutlet weak var headButton: AButton!
-    @IBOutlet weak var treeButton: AButton!
-    @IBOutlet weak var landscapeButton: AButton!
+    @IBOutlet weak var planetButton: DrawingTypeButton!
+    @IBOutlet weak var headButton: DrawingTypeButton!
+    @IBOutlet weak var treeButton: DrawingTypeButton!
+    @IBOutlet weak var landscapeButton: DrawingTypeButton!
     @objc weak public var delegate:DrawningsListDelegate?
+    
     public var selectedtemplate: Template?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        selectTemplate(selectedtemplate ?? .head)
+        
+        switch selectedtemplate {
+        case .head:
+            headButton.setSelected(true)
+        case .landscape:
+            landscapeButton.setSelected(true)
+        case .planet:
+            planetButton.setSelected(true)
+        case .tree:
+            treeButton.setSelected(true)
+        case .none:
+            headButton.setSelected(true)
+            selectedtemplate = .head
+        }
     }
     
-    @IBAction func planetButtonTapped(_ sender: AButton) {
+    @IBAction func planetButtonTapped(_ sender: DrawingTypeButton) {
         selectTemplate(.planet)
     }
     
-    @IBAction func headButtonTapped(_ sender: AButton) {
+    @IBAction func headButtonTapped(_ sender: DrawingTypeButton) {
         selectTemplate(.head)
     }
     
-    @IBAction func treeButtonTapped(_ sender: AButton) {
+    @IBAction func treeButtonTapped(_ sender: DrawingTypeButton) {
         selectTemplate(.tree)
     }
     
-    @IBAction func landscapeButtonTapped(_ sender: AButton) {
+    @IBAction func landscapeButtonTapped(_ sender: DrawingTypeButton) {
         selectTemplate(.landscape)
         
     }
+    
     @objc
     public func setSelectedTemplate (_ template: Int){
         selectedtemplate = Template(rawValue: template)
@@ -70,5 +85,6 @@ import UIKit
         }
         selectedtemplate = template
         self.delegate?.selectedDrawning(selectedtemplate?.rawValue ?? 1)
+        self.navigationController?.popToRootViewController(animated: true)
     }
 }

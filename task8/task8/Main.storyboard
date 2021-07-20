@@ -36,18 +36,17 @@
                                     <color key="titleColor" name="Light Green Sea"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Olk-eC-Tss" customClass="ActionButton">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Olk-eC-Tss" customClass="ActionButton">
                                 <rect key="frame" x="20" y="486" width="151" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="151" id="ONJ-Vw-1xZ"/>
                                     <constraint firstAttribute="height" constant="32" id="h4m-hn-7DK"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="Open Timer">
                                     <color key="titleColor" name="Light Green Sea"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xyn-3B-kwF" customClass="ActionButton">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xyn-3B-kwF" customClass="ActionButton">
                                 <rect key="frame" x="243" y="434" width="91" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="91" id="6Fm-uo-HrO"/>
@@ -57,7 +56,7 @@
                                     <color key="titleColor" name="Light Green Sea"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0MD-Ih-7Ra" customClass="ActionButton">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0MD-Ih-7Ra" customClass="ActionButton">
                                 <rect key="frame" x="239" y="486" width="95" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="95" id="6ed-Up-fU9"/>
@@ -67,7 +66,7 @@
                                     <color key="titleColor" name="Light Green Sea"/>
                                 </state>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ScP-BS-1QA" customClass="ActionButton">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ScP-BS-1QA" customClass="ActionButton">
                                 <rect key="frame" x="243" y="434" width="91" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="ogo-Do-njD"/>
@@ -124,7 +123,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hSl-sy-WY1" customClass="AButton">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hSl-sy-WY1" customClass="DrawingTypeButton" customModule="task8" customModuleProvider="target">
                                 <rect key="frame" x="88" y="94" width="200" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="B2v-yn-5qw"/>
@@ -137,7 +136,7 @@
                                     <action selector="planetButtonTapped:" destination="UsE-jb-lx8" eventType="touchUpInside" id="mZt-lH-KBz"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BWd-Sg-EDq" customClass="AButton">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BWd-Sg-EDq" customClass="DrawingTypeButton" customModule="task8" customModuleProvider="target">
                                 <rect key="frame" x="88" y="149" width="200" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="1Ba-Wp-049"/>
@@ -150,7 +149,7 @@
                                     <action selector="headButtonTapped:" destination="UsE-jb-lx8" eventType="touchUpInside" id="vOg-M4-KPc"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XfJ-JW-SVt" customClass="AButton">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XfJ-JW-SVt" customClass="DrawingTypeButton" customModule="task8" customModuleProvider="target">
                                 <rect key="frame" x="88" y="204" width="200" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="4WQ-eM-APX"/>
@@ -163,7 +162,7 @@
                                     <action selector="treeButtonTapped:" destination="UsE-jb-lx8" eventType="touchUpInside" id="hcl-b8-BpB"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CT9-4t-3dK" customClass="AButton">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CT9-4t-3dK" customClass="DrawingTypeButton" customModule="task8" customModuleProvider="target">
                                 <rect key="frame" x="88" y="259" width="200" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="jd9-Mr-oqO"/>

@@ -2,7 +2,7 @@
 //  CanvasViewDelegate.h
 //  task8
 //
-//  Created by Маргарита Жучик on 19.07.21.
+//  Created by Маргарита Жучик on 20.07.21.
 //
 
 #import <Foundation/Foundation.h>

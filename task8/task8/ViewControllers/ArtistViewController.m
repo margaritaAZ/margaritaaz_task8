@@ -10,14 +10,14 @@
 #import "AButton.h"
 #import "PaletteVC.h"
 #import "PaletteDelegate.h"
-#import "CanvasViewDelegate.h"
 #import "task8-Swift.h"
 #import "TimerDelegate.h"
 #import "DrawningsListDelegate.h"
 #import "Drawing.h"
+#import "CanvasViewDelegate.h"
 
 
-@interface ArtistViewController () <PaletteDelegate, CanvasViewDelegate, TimerDelegate, DrawningsListDelegate>
+@interface ArtistViewController () <PaletteDelegate, TimerDelegate, DrawningsListDelegate, CanvasViewDelegate>
 
 @property (weak, nonatomic) IBOutlet AButton *shareButton;
 @property (weak, nonatomic) IBOutlet AButton *openPaletteButton;
@@ -29,6 +29,7 @@
 @property (weak, nonatomic) IBOutlet AButton *openTimerButton;
 
 @property (strong, nonatomic) Drawing *drawing;
+//@property (strong, nonatomic) NSTimer *timer;
 
 @end
 
@@ -44,9 +45,8 @@
     [self.drawButton addTarget:self action:@selector(startDrawing) forControlEvents:UIControlEventTouchUpInside];
     [self.resetButton addTarget:self action:@selector(resetView) forControlEvents:UIControlEventTouchUpInside];
     [self.shareButton addTarget:self action:@selector(shareButtonTapped) forControlEvents:UIControlEventTouchUpInside];
-    self.canvasView.delegate = self;
     self.drawing = [Drawing new];
-    self.drawing.type = 1;
+    self.canvasView.delegate = self;
 }
 
 // MARK: Drawings
