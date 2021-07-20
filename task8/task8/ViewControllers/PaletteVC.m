@@ -6,7 +6,6 @@
 //
 
 #import "PaletteVC.h"
-#import "ColorButton.h"
 #import "AButton.h"
 
 @interface PaletteVC ()
@@ -88,6 +87,12 @@
         self.view.backgroundColor = button.color;
         [button setSelected:YES];
         [self.pickedColors addObject:button];
+    }
+}
+
+- (void) setSelectedButtons: (NSArray<ColorButton *>*) colors {
+    for (int i = 0; i < colors.count; i++) {
+        [colors[i] setSelected:YES];
     }
 }
 

@@ -13,13 +13,6 @@ typedef NS_ENUM(NSInteger, LineType) {
     line3
 };
 
-typedef NS_ENUM(NSInteger, DrawingTemplate) {
-    planet,
-    head,
-    tree,
-    landscape
-};
-
 @interface CanvasView()
 
 @property (nonatomic, strong) NSMutableSet<CAShapeLayer *>* pathLayers;
@@ -39,16 +32,11 @@ typedef NS_ENUM(NSInteger, DrawingTemplate) {
         self.layer.shadowOpacity = 0.25f;
         self.layer.masksToBounds = NO;
         self.layer.shadowPath = [UIBezierPath bezierPathWithRoundedRect:self.bounds cornerRadius:8].CGPath;
-        
-        //        [self startDrowings];
     }
     return self;
 }
 
 - (void) addShapelayer: (UIBezierPath *) linePath withColor: (UIColor *) color andTimer: (float) time{
-    //    UIBezierPath *path = [UIBezierPath new];
-    //    path = [self getPath:line];
-    
     CAShapeLayer *shapeLayer = [CAShapeLayer layer];
     shapeLayer.path = linePath.CGPath;
     shapeLayer.fillColor = nil;
@@ -67,6 +55,11 @@ typedef NS_ENUM(NSInteger, DrawingTemplate) {
     NSMutableArray <UIColor *>* lineColors = [NSMutableArray arrayWithArray:colors];
     while (lineColors.count < 3) {
         [lineColors addObject: UIColor.blackColor];
+    }
+    int count = 3;
+    for (int i = 0; i < count - 1; i++) {
+        int n = arc4random_uniform(count - i) + i;
+        [lineColors exchangeObjectAtIndex:i withObjectAtIndex:n];
     }
     self.pathLayers = [NSMutableSet new];
     [self addShapelayer: [self getLinePath:template lineType:line1] withColor:lineColors[0] andTimer:time];
@@ -91,7 +84,6 @@ typedef NS_ENUM(NSInteger, DrawingTemplate) {
             break;
     }
     return nil;
-    
 }
 
 - (void)clearView {

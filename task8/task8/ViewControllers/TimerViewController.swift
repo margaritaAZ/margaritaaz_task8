@@ -43,4 +43,10 @@ import UIKit
         timeLabel.text = String(format: "%.2f", sender.value) + " s"
     }
     
+    @objc
+    func setSliderValue (_ value: Float){
+        slider.value = value
+        sliderValueWasChanged(self.slider)
+    }
+    
 }

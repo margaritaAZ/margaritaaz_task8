@@ -8,9 +8,7 @@
 import Foundation
 import UIKit
 
-
-
-class DrawingsListVC: UIViewController {
+@objc class DrawingsListVC: UIViewController {
     enum Template: Int {
         case planet, head, tree, landscape
     }
@@ -19,7 +17,7 @@ class DrawingsListVC: UIViewController {
     @IBOutlet weak var treeButton: AButton!
     @IBOutlet weak var landscapeButton: AButton!
     @objc weak public var delegate:DrawningsListDelegate?
-    var selectedtemplate: Template?
+    public var selectedtemplate: Template?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +39,10 @@ class DrawingsListVC: UIViewController {
     @IBAction func landscapeButtonTapped(_ sender: AButton) {
         selectTemplate(.landscape)
         
+    }
+    @objc
+    public func setSelectedTemplate (_ template: Int){
+        selectedtemplate = Template(rawValue: template)
     }
     
     func selectTemplate (_ template: Template) {
